@@ -5,10 +5,10 @@ import java.util.Random;
 public class FigureSupplier {
     private ColorSupplier colorSupplier = new ColorSupplier();
     private Random random = new Random();
+    public static final int FIGURE_NUMBER = 5;
 
     public Figure getRandomFigure() {
-        final int FIGURE_COUNT = 5;
-        int figureType = random.nextInt(FIGURE_COUNT);// 0-4 для 5 фігур
+        int figureType = random.nextInt(FIGURE_NUMBER);
 
         String color = colorSupplier.getRandomColor();
 
