@@ -7,7 +7,8 @@ public class FigureSupplier {
     private Random random = new Random();
 
     public Figure getRandomFigure() {
-        int figureType = random.nextInt(5);// 0-4 для 5 фігур
+        final int FIGURE_COUNT = 5;
+        int figureType = random.nextInt(FIGURE_COUNT);// 0-4 для 5 фігур
 
         String color = colorSupplier.getRandomColor();
 
@@ -39,7 +40,7 @@ public class FigureSupplier {
 
     public Figure getDefaultFigure() {
         int radius = 10;
-        String color = "White";
+        String color = "white";
         return new Circle(radius, color);
     }
 }
