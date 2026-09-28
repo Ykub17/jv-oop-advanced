@@ -13,34 +13,34 @@ public class FigureSupplier {
         String color = colorSupplier.getRandomColor();
 
         switch (figureType) {
-            case 0: // Square
+            case 0:
                 int side = random.nextInt(10) + 1;
-                return new Square(side, color);
+                return new Square(color, side);
 
-            case 1: // Rectangle
+            case 1:
                 int width = random.nextInt(10) + 1;
                 int heightR = random.nextInt(10) + 1;
-                return new Rectangle(width, heightR, color);
-            case 2: // RightTriangle
+                return new Rectangle(color, width, heightR);
+            case 2:
                 int firstLeg = random.nextInt(10) + 1;
                 int secondLeg = random.nextInt(10) + 1;
-                return new RightTriangle(firstLeg, secondLeg, color);
-            case 3: //Circle
+                return new RightTriangle(color, firstLeg, secondLeg);
+            case 3:
                 int radius = random.nextInt(10) + 1;
-                return new Circle(radius, color);
-            case 4: //IsoscelesTrapezoid
+                return new Circle(color, radius);
+            case 4:
                 int baseA = random.nextInt(10) + 1;
                 int baseB = random.nextInt(10) + 1;
                 int height = random.nextInt(10) + 1;
-                return new IsoscelesTrapezoid(baseA, baseB, height, color);
+                return new IsoscelesTrapezoid(color, baseA, baseB, height);
             default:
                 return getDefaultFigure();
         }
     }
 
     public Figure getDefaultFigure() {
-        int radius = 10;
-        String color = "white";
-        return new Circle(radius, color);
+        final int radius = 10;
+        String color = Colors.WHITE.name();
+        return new Circle(color, radius);
     }
 }

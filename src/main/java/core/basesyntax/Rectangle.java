@@ -3,29 +3,23 @@ package core.basesyntax;
 public class Rectangle extends Figure {
     private int width;
     private int heightR;
-    private String color;
 
-    public Rectangle(int width, int heightR, String color) {
+    public Rectangle(String color, int width, int heightR) {
+        super(color);
         this.width = width;
         this.heightR = heightR;
-        this.color = color;
 
     }
 
     @Override
-    public double getArea() {
+    public double getAreaCalculator() {
         return heightR * width;
     }
 
     @Override
     public void draw() {
-        System.out.println("Figure: rectangle, area: " + getArea()
+        System.out.println("Figure: rectangle, area: " + getAreaCalculator()
                 + " sq. units, width: " + width + " units, height: "
-                + heightR + " units, color: " + color);
-    }
-
-    @Override
-    public String getColor() {
-        return color;
+                + heightR + " units, color: " + getColor());
     }
 }
